@@ -36,4 +36,8 @@ public abstract class BasePage {
     public boolean getCurrentUrl(String url) {
         return wait.until(ExpectedConditions.urlToBe(url));
     }
+
+    public boolean errorMessageIsDisplayed(By locator) {
+        return wait.until(ExpectedConditions.visibilityOf(findElement(locator))).isDisplayed();
+    }
 }

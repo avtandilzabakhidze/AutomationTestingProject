@@ -7,6 +7,7 @@ public class LoginPage extends BasePage {
     private final By username = By.id("user-name");
     private final By password = By.id("password");
     private final By loginButton = By.id("login-button");
+    private final By errorMessage = By.xpath("//h3[@data-test ='error']");
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -26,5 +27,9 @@ public class LoginPage extends BasePage {
 
     public boolean checkCurrentUrl(String expectedUrl) {
         return getCurrentUrl(expectedUrl);
+    }
+
+    public boolean checkRequiredParams(){
+        return errorMessageIsDisplayed(errorMessage);
     }
 }

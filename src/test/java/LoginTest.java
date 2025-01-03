@@ -22,11 +22,64 @@ public class LoginTest extends BaseTest {
     public Object[][] loginCredentials() {
         return new Object[][]{
                 {"standard_user", "secret_sauce"},
-//                {"locked_out_user", "secret_sauce"}, Add negative case
                 {"problem_user", "secret_sauce"},
                 {"performance_glitch_user", "secret_sauce"},
                 {"error_user", "secret_sauce"},
                 {"visual_user", "secret_sauce"}
         };
+    }
+
+    @Test
+    public void testEmptyCredentials() {
+        loginPage.enterUsername("");
+        loginPage.enterPassword("");
+        loginPage.clickLoginButton();
+
+        Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not display \n");
+    }
+
+    @Test
+    public void testEmptyPassword() {
+        loginPage.enterUsername("standard_user");
+        loginPage.enterPassword("");
+        loginPage.clickLoginButton();
+
+        Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not display \n");
+    }
+
+    @Test
+    public void testEmptyUsername() {
+        loginPage.enterUsername("");
+        loginPage.enterPassword("secret_sauce");
+        loginPage.clickLoginButton();
+
+        Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not display \n");
+    }
+
+    @Test
+    public void testLockedOutUser() {
+        loginPage.enterUsername("locked_out_user");
+        loginPage.enterPassword("secret_sauce");
+        loginPage.clickLoginButton();
+
+        Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not display \n");
+    }
+
+    @Test
+    public void testWrongUsername() {
+        loginPage.enterUsername("123");
+        loginPage.enterPassword("secret_sauce");
+        loginPage.clickLoginButton();
+
+        Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not display \n");
+    }
+
+    @Test
+    public void testWrongPassword() {
+        loginPage.enterUsername("locked_out_user");
+        loginPage.enterPassword("123");
+        loginPage.clickLoginButton();
+
+        Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not display \n");
     }
 }
