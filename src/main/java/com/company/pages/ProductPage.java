@@ -46,10 +46,6 @@ public class ProductPage extends BasePage {
     }
 
     public boolean checkProductNumber() {
-        try {
-            return findElement(cartProductNumber).isDisplayed();
-        } catch (NoSuchElementException e) {
-            return false;
-        }
+        return elementIsDisplayed(cartProductNumber);
     }
 }

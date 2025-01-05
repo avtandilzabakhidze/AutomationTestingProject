@@ -1,5 +1,6 @@
 import com.company.base.BaseAction;
 import com.company.pages.LoginPage;
+import com.company.pages.LogoutPage;
 import com.company.pages.ProductPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
@@ -12,6 +13,7 @@ public class BaseTest {
     LoginPage loginPage;
     BaseAction baseAction;
     ProductPage productPage;
+    LogoutPage logoutPage;
 
     @BeforeMethod
     public void setUp() throws IOException {
@@ -20,6 +22,7 @@ public class BaseTest {
         driver.get(baseAction.getUrl());
         loginPage = new LoginPage(driver);
         productPage = new ProductPage(driver);
+        logoutPage = new LogoutPage(driver);
     }
 
     @AfterMethod

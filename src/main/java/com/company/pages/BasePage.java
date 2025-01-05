@@ -1,6 +1,7 @@
 package com.company.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -47,6 +48,10 @@ public abstract class BasePage {
     }
 
     public boolean elementIsDisplayed(By locator) {
-        return wait.until(ExpectedConditions.visibilityOf(findElement(locator))).isDisplayed();
+        try {
+            return findElement(locator).isDisplayed();
+        } catch (NoSuchElementException e) {
+            return false;
+        }
     }
 }
