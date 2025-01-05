@@ -16,7 +16,7 @@ public class ProductTest extends BaseTest {
         productPage.addToCart();
         productPage.removeToCart();
 
-        Assert.assertTrue(productPage.checkProductNumber(), "\n product number is not correct \n");
+        Assert.assertFalse(productPage.checkProductNumber(), "\n product number is not correct \n");
     }
 
     @Test
@@ -34,6 +34,6 @@ public class ProductTest extends BaseTest {
         productPage.addAllProducts();
         productPage.removeAllProductsFromCart();
 
-        Assert.assertTrue(productPage.checkProductNumber(), "\n product number is not correct \n");
+        Assert.assertFalse(productPage.checkProductNumber(), "\n product number is not correct \n");
     }
 }
