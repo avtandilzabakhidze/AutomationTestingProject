@@ -73,8 +73,4 @@ public class OrderPage extends BasePage {
     public boolean isErrorMessageRequiredFields() {
         return elementIsDisplayed(errorMessageRequiredFields);
     }
-
-    public String calculateExpectedTotalPrice() {
-        return "$35.99";
-    }
 }
