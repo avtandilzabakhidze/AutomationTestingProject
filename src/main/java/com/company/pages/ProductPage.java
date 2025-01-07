@@ -19,6 +19,7 @@ public class ProductPage extends BasePage {
     private final By cart = By.xpath("//a[@class ='shopping_cart_link']");
     private final By cartProductNumber = By.xpath("//span[@class ='shopping_cart_badge']");
     private final By sortButton = By.xpath("//select[@class=\"product_sort_container\"]");
+    private final By cartProduct = By.xpath("//div[@class=\"cart_item\"]");
 
     public ProductPage(WebDriver driver) {
         super(driver);
@@ -92,5 +93,16 @@ public class ProductPage extends BasePage {
     public void sortByPriceToHigh(){
         Select select = new Select(findElement(sortButton));
         select.selectByValue("lohi");
+    }
+
+
+    public void enterCart(){
+        click(cart);
+    }
+
+    public int CartProductNumber(){
+        List<WebElement> elements = findElements(cartProduct);
+
+        return elements.size();
     }
 }
