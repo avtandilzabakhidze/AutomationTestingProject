@@ -8,6 +8,7 @@ public class LoginPage extends BasePage {
     private final By password = By.id("password");
     private final By loginButton = By.id("login-button");
     private final By errorMessage = By.xpath("//h3[@data-test ='error']");
+    private final By swagLabsTitle = By.xpath("//div[@class=\"app_logo\"]");
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -31,5 +32,9 @@ public class LoginPage extends BasePage {
 
     public boolean checkRequiredParams(){
         return errorMessageIsDisplayed(errorMessage);
+    }
+
+    public boolean logoIsDisplayed() {
+        return elementIsDisplayed(swagLabsTitle);
     }
 }

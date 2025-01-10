@@ -10,6 +10,7 @@ public class LoginTest extends BaseTest {
         loginPage.clickLoginButton();
 
         Assert.assertTrue(loginPage.checkCurrentUrl("https://www.saucedemo.com/inventory.html"), "\n Expected URL is not correct \n");
+        Assert.assertTrue(loginPage.logoIsDisplayed(), "\n Logo is not displayed \n");
     }
 
     @DataProvider(name = "loginCredentials")
