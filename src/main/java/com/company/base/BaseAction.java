@@ -12,7 +12,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.Properties;
 
 public class BaseAction {
@@ -53,7 +55,11 @@ public class BaseAction {
     public void takeScreenShot() throws IOException {
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
-        File dataFile = new File(System.getProperty("user.dir") + "\\resources\\screenshots\\" + System.currentTimeMillis() + ".png");
-        FileUtils.copyFile(scrFile, dataFile);
+        File destFile = new File(System.getProperty("user.dir") + "\\resources\\screenshots\\" + timestamp() + ".png");
+        FileUtils.copyFile(scrFile, destFile);
+    }
+
+    public String timestamp() {
+        return new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date());
     }
 }
