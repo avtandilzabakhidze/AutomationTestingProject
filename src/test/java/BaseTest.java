@@ -1,8 +1,5 @@
 import com.company.base.BaseAction;
-import com.company.pages.LoginPage;
-import com.company.pages.LogoutPage;
-import com.company.pages.OrderPage;
-import com.company.pages.ProductPage;
+import com.company.pages.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

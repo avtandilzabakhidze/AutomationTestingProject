@@ -77,6 +77,12 @@ public class ProductPage extends BasePage {
         select.selectByValue("az");
     }
 
+    public void sortByNameDesc() {
+        Select select = new Select(findElement(sortButton));
+        select.selectByValue("za");
+    }
+
+
     public List<Double> getProductPrices() {
         List<WebElement> productPricesName = findElements(price);
         List<Double> productPrices = new ArrayList<>();
@@ -95,6 +101,10 @@ public class ProductPage extends BasePage {
         select.selectByValue("lohi");
     }
 
+    public void sortByPriceHighToLow() {
+        Select select = new Select(findElement(sortButton));
+        select.selectByValue("hilo");
+    }
 
     public void enterCart(){
         click(cart);

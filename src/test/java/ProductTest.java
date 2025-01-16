@@ -63,6 +63,20 @@ public class ProductTest extends BaseTest {
         Assert.assertEquals(sortedProductNames, productNames, "\n Sort A ro Z don't work \n");
     }
 
+
+    @Test
+    public void testSortByNameZToA() {
+        baseLogin();
+        productPage.sortByNameDesc();
+
+        List<String> productNames = productPage.getProductNames();
+        List<String> sortedProductNames = new ArrayList<>(productNames);
+        Collections.sort(sortedProductNames, Collections.reverseOrder());
+
+        Assert.assertEquals(sortedProductNames, productNames, "\n Sort Z to A doesn't work \n");
+    }
+
+
     @Test
     public void testSortByPriceLowToHigh() {
         baseLogin();
@@ -72,7 +86,21 @@ public class ProductTest extends BaseTest {
         List<Double> sortedProductPrices = new ArrayList<>(productPrices);
         Collections.sort(sortedProductPrices);
 
+        System.out.println(productPrices);
+        System.out.println(sortedProductPrices);
         Assert.assertEquals(sortedProductPrices, productPrices, "\n Sort Low to High don't work \n");
+    }
+
+    @Test
+    public void testSortByPriceHighToLow() {
+        baseLogin();
+        productPage.sortByPriceHighToLow();
+
+        List<Double> productPrices = productPage.getProductPrices();
+        List<Double> sortedProductPrices = new ArrayList<>(productPrices);
+        Collections.sort(sortedProductPrices, Collections.reverseOrder());
+
+        Assert.assertEquals(sortedProductPrices, productPrices, "\n Sort High to Low doesn't work \n");
     }
 
     @Test
