@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Annotations">
+<suite name="TestSuite">
     <listeners>
         <listener class-name="com.company.base.Listeners"/>
     </listeners>
-    <test name="Run Class Annotations">
+    <test name="Tests">
        <classes>
            <class name="LoginTest"/>
            <class name="LogoutTest"/>
