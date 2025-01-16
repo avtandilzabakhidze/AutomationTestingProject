@@ -78,4 +78,20 @@ public class OrderTest extends BaseTest{
 
         Assert.assertEquals(totalPrice, 140.34, "Total price calculation is incorrect");
     }
+
+    @Test
+    public void cancelOrder() {
+        baseLogin();
+        productPage.addAllProducts();
+        productPage.enterCart();
+        orderPage.clickCheckoutButton();
+        orderPage.enterFirstName("one");
+        orderPage.enterLastName("two");
+        orderPage.enterPostalCode("1223");
+        orderPage.clickContinueButton();
+        orderPage.cancelOrderLastStep();
+
+        Assert.assertTrue(loginPage.checkCurrentUrl("https://www.saucedemo.com/inventory.html"), "\n Expected URL is not correct \n");
+        Assert.assertTrue(loginPage.logoIsDisplayed(), "\n Logo is not displayed \n");
+    }
 }

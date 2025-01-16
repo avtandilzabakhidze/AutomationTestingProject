@@ -17,6 +17,7 @@ public class OrderPage extends BasePage {
     private final By completeHeader = By.xpath("//h2[@class='complete-header']");
     private final By errorMessageRequiredFields = By.xpath("//h3[@data-test=\"error\"]");
     private final By backHome = By.id("back-to-products");
+    private final By cancel= By.id("cancel");
 
 
     public OrderPage(WebDriver driver) {
@@ -68,6 +69,10 @@ public class OrderPage extends BasePage {
 
     public void clickBackToHome() {
         click(backHome);
+    }
+
+    public void cancelOrderLastStep() {
+        click(cancel);
     }
 
     public boolean isErrorMessageRequiredFields() {
