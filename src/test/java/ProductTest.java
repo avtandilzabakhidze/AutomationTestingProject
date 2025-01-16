@@ -86,8 +86,6 @@ public class ProductTest extends BaseTest {
         List<Double> sortedProductPrices = new ArrayList<>(productPrices);
         Collections.sort(sortedProductPrices);
 
-        System.out.println(productPrices);
-        System.out.println(sortedProductPrices);
         Assert.assertEquals(sortedProductPrices, productPrices, "\n Sort Low to High don't work \n");
     }
 
