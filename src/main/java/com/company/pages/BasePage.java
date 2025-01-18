@@ -43,10 +43,6 @@ public abstract class BasePage {
         return wait.until(ExpectedConditions.urlToBe(url));
     }
 
-    public boolean errorMessageIsDisplayed(By locator) {
-        return wait.until(ExpectedConditions.visibilityOf(findElement(locator))).isDisplayed();
-    }
-
     public boolean elementIsDisplayed(By locator) {
         try {
             return findElement(locator).isDisplayed();

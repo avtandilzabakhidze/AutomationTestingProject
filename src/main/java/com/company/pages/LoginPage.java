@@ -31,7 +31,7 @@ public class LoginPage extends BasePage {
     }
 
     public boolean checkRequiredParams(){
-        return errorMessageIsDisplayed(errorMessage);
+        return elementIsDisplayed(errorMessage);
     }
 
     public boolean logoIsDisplayed() {
