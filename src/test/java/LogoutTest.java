@@ -9,8 +9,8 @@ public class LogoutTest extends BaseTest {
         logoutPage.clickLogoutButton();
 
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(logoutPage.isUsernameButtonPresent(), "\n Username input is not present \n");
-        softAssert.assertTrue(logoutPage.isPasswordButtonPresent(), "\n Password input is not present \n");
+        softAssert.assertTrue(logoutPage.isUsernameButtonPresent(), "\n Username input field is not present on the login page after logout \n");
+        softAssert.assertTrue(logoutPage.isPasswordButtonPresent(), "\n Password input field is not present on the login page after logout \n");
         softAssert.assertAll();
     }
 }
