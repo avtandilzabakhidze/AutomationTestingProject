@@ -11,7 +11,7 @@ public class ProductTest extends BaseTest {
         baseLogin();
         productPage.addToCart();
 
-        Assert.assertEquals(productPage.getProductNumber(), 1, "\n product number is not correct \n");
+        Assert.assertEquals(productPage.getProductNumber(), 1, "\n Product number after adding the first product is incorrect \n");
     }
 
     @Test
@@ -20,7 +20,7 @@ public class ProductTest extends BaseTest {
         productPage.addToCart();
         productPage.removeToCart();
 
-        Assert.assertFalse(productPage.checkProductNumber(), "\n product number is not correct \n");
+        Assert.assertFalse(productPage.checkProductNumber(), "\n Product number should be 0 after removing the product \n");
     }
 
     @Test
@@ -28,7 +28,7 @@ public class ProductTest extends BaseTest {
         baseLogin();
         productPage.addAllProducts();
 
-        Assert.assertEquals(productPage.getProductNumber(), 6, "\n product number is not correct \n");
+        Assert.assertEquals(productPage.getProductNumber(), 6, "\n Product number after adding all products is incorrect \n");
     }
 
 
@@ -38,7 +38,7 @@ public class ProductTest extends BaseTest {
         productPage.addAllProducts();
         productPage.removeAllProductsFromCart();
 
-        Assert.assertFalse(productPage.checkProductNumber(), "\n product number is not correct \n");
+        Assert.assertFalse(productPage.checkProductNumber(), "\n Product number should be 0 after removing all products \n");
     }
 
     @Test
@@ -47,8 +47,8 @@ public class ProductTest extends BaseTest {
         String productPrice = productPage.getProductPrice();
         String productName = productPage.getProductName();
 
-        Assert.assertEquals(productPrice, "$29.99", "\n product price is not correct \n");
-        Assert.assertEquals(productName, "Sauce Labs Backpack", "\n product name is not correct \n");
+        Assert.assertEquals(productPrice, "$29.99", "\n Product price is incorrect \n");
+        Assert.assertEquals(productName, "Sauce Labs Backpack", "\n Product name is incorrect \n");
     }
 
     @Test
@@ -60,7 +60,7 @@ public class ProductTest extends BaseTest {
         List<String> sortedProductNames = new ArrayList<>(productNames);
         Collections.sort(sortedProductNames);
 
-        Assert.assertEquals(sortedProductNames, productNames, "\n Sort A ro Z don't work \n");
+        Assert.assertEquals(sortedProductNames, productNames, "\n Sorting products from A to Z did not work correctly \n");
     }
 
 
@@ -73,7 +73,7 @@ public class ProductTest extends BaseTest {
         List<String> sortedProductNames = new ArrayList<>(productNames);
         Collections.sort(sortedProductNames, Collections.reverseOrder());
 
-        Assert.assertEquals(sortedProductNames, productNames, "\n Sort Z to A doesn't work \n");
+        Assert.assertEquals(sortedProductNames, productNames, "\n Sorting products from Z to A did not work correctly \n");
     }
 
 
@@ -86,7 +86,7 @@ public class ProductTest extends BaseTest {
         List<Double> sortedProductPrices = new ArrayList<>(productPrices);
         Collections.sort(sortedProductPrices);
 
-        Assert.assertEquals(sortedProductPrices, productPrices, "\n Sort Low to High don't work \n");
+        Assert.assertEquals(sortedProductPrices, productPrices, "\n Sorting products by price from low to high did not work correctly \n");
     }
 
     @Test
@@ -98,7 +98,7 @@ public class ProductTest extends BaseTest {
         List<Double> sortedProductPrices = new ArrayList<>(productPrices);
         Collections.sort(sortedProductPrices, Collections.reverseOrder());
 
-        Assert.assertEquals(sortedProductPrices, productPrices, "\n Sort High to Low doesn't work \n");
+        Assert.assertEquals(sortedProductPrices, productPrices, "\n Sorting products by price from high to low did not work correctly \n");
     }
 
     @Test
@@ -108,7 +108,7 @@ public class ProductTest extends BaseTest {
         productPage.enterCart();
         int productNum = productPage.CartProductNumber();
 
-        Assert.assertEquals(productNum, 1, "\n product number is not correct \n");
+        Assert.assertEquals(productNum, 1, "\n Product number in the cart is incorrect after adding one product \n");
     }
 
     @Test
@@ -118,6 +118,6 @@ public class ProductTest extends BaseTest {
         productPage.enterCart();
         int productNum = productPage.CartProductNumber();
 
-        Assert.assertEquals(productNum, 6, "\n product number is not correct \n");
+        Assert.assertEquals(productNum, 6, "\n Product number in the cart is incorrect after adding all products \n");
     }
 }
