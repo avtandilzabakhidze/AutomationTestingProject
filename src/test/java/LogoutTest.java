@@ -1,5 +1,5 @@
-import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class LogoutTest extends BaseTest {
     @Test
@@ -8,7 +8,9 @@ public class LogoutTest extends BaseTest {
         logoutPage.openBurgerManu();
         logoutPage.clickLogoutButton();
 
-        Assert.assertTrue(logoutPage.isUsernameButtonPresent(),"\n Username input is not present \n");
-        Assert.assertTrue(logoutPage.isPasswordButtonPresent(),"\n Password input is not present \n");
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(logoutPage.isUsernameButtonPresent(), "\n Username input is not present \n");
+        softAssert.assertTrue(logoutPage.isPasswordButtonPresent(), "\n Password input is not present \n");
+        softAssert.assertAll();
     }
 }
