@@ -9,8 +9,8 @@ public class LoginTest extends BaseTest {
         loginPage.enterPassword(password);
         loginPage.clickLoginButton();
 
-        Assert.assertTrue(loginPage.checkCurrentUrl("https://www.saucedemo.com/inventory.html"), "\n Expected URL is not correct \n");
-        Assert.assertTrue(loginPage.logoIsDisplayed(), "\n Logo is not displayed \n");
+        Assert.assertTrue(loginPage.checkCurrentUrl("https://www.saucedemo.com/inventory.html"), "\n The URL after login is incorrect \n");
+        Assert.assertTrue(loginPage.logoIsDisplayed(), "\n The logo is not displayed on the inventory page after login \n");
     }
 
     @DataProvider(name = "loginCredentials")
@@ -30,7 +30,7 @@ public class LoginTest extends BaseTest {
         loginPage.enterPassword("");
         loginPage.clickLoginButton();
 
-        Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not display \n");
+        Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not displayed \n");
     }
 
     @Test
@@ -39,7 +39,7 @@ public class LoginTest extends BaseTest {
         loginPage.enterPassword("");
         loginPage.clickLoginButton();
 
-        Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not display \n");
+        Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not displayed \n");
     }
 
     @Test
@@ -48,7 +48,7 @@ public class LoginTest extends BaseTest {
         loginPage.enterPassword("secret_sauce");
         loginPage.clickLoginButton();
 
-        Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not display \n");
+        Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not displayed \n");
     }
 
     @Test
@@ -57,7 +57,7 @@ public class LoginTest extends BaseTest {
         loginPage.enterPassword("secret_sauce");
         loginPage.clickLoginButton();
 
-        Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not display \n");
+        Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not displayed \n");
     }
 
     @Test
@@ -66,7 +66,7 @@ public class LoginTest extends BaseTest {
         loginPage.enterPassword("secret_sauce");
         loginPage.clickLoginButton();
 
-        Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not display \n");
+        Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not displayed \n");
     }
 
     @Test
@@ -75,6 +75,6 @@ public class LoginTest extends BaseTest {
         loginPage.enterPassword("123");
         loginPage.clickLoginButton();
 
-        Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not display \n");
+        Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not displayed \n");
     }
 }
