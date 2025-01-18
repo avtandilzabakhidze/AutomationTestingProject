@@ -27,7 +27,7 @@ public class OrderTest extends BaseTest{
         orderPage.enterPostalCode("");
         orderPage.clickContinueButton();
 
-        Assert.assertTrue(orderPage.isErrorMessageRequiredFields(), "\n error message is not display \n");
+        Assert.assertTrue(orderPage.isErrorMessageRequiredFields(), "\n Error message was not displayed \n");
     }
 
     @Test
@@ -60,7 +60,7 @@ public class OrderTest extends BaseTest{
         orderPage.enterPostalCode("1223");
         orderPage.clickContinueButton();
         orderPage.clickFinishButton();
-        Assert.assertTrue(orderPage.isOrderComplete(), "Order was not completed successfully");
+        Assert.assertTrue(orderPage.isOrderComplete(), "\n Order was not completed successfully \n");
         orderPage.clickBackToHome();
     }
 
@@ -92,6 +92,6 @@ public class OrderTest extends BaseTest{
         orderPage.cancelOrderLastStep();
 
         Assert.assertTrue(loginPage.checkCurrentUrl("https://www.saucedemo.com/inventory.html"), "\n Expected URL is not correct \n");
-        Assert.assertTrue(loginPage.logoIsDisplayed(), "\n Logo is not displayed \n");
+        Assert.assertTrue(loginPage.logoIsDisplayed(), "\n logo is not displayed after cancelling the order \n");
     }
 }
