@@ -1,8 +1,8 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class OrderTest extends BaseTest{
-    @Test
+public class OrderTest extends BaseTest {
+    @Test(description = "Test checkout with valid details")
     public void testCheckoutWithValidDetails() {
         baseLogin();
         productPage.addAllProducts();
@@ -16,7 +16,7 @@ public class OrderTest extends BaseTest{
         Assert.assertTrue(orderPage.isOrderComplete(), "\n Order was not completed successfully \n");
     }
 
-    @Test
+    @Test(description = "Test checkout with missing details")
     public void testCheckoutWithMissingDetails() {
         baseLogin();
         productPage.addAllProducts();
@@ -30,7 +30,7 @@ public class OrderTest extends BaseTest{
         Assert.assertTrue(orderPage.isErrorMessageRequiredFields(), "\n Error message was not displayed \n");
     }
 
-    @Test
+    @Test(description = "Test order summary total price")
     public void testOrderSummaryTotalPrice() {
         baseLogin();
         productPage.addAllProducts();
@@ -49,7 +49,7 @@ public class OrderTest extends BaseTest{
         Assert.assertEquals(taxPrice, 10.40, "Tax price is incorrect");
     }
 
-    @Test
+    @Test(description = "Test back to home after order completion")
     public void testBackToHomeAfterOrderComplete() {
         baseLogin();
         productPage.addAllProducts();
@@ -64,7 +64,7 @@ public class OrderTest extends BaseTest{
         orderPage.clickBackToHome();
     }
 
-    @Test
+    @Test(description = "Test total price calculation")
     public void testTotalPriceCalculation() {
         baseLogin();
         productPage.addAllProducts();
@@ -79,7 +79,7 @@ public class OrderTest extends BaseTest{
         Assert.assertEquals(totalPrice, 140.34, "Total price calculation is incorrect");
     }
 
-    @Test
+    @Test(description = "Test order cancellation")
     public void cancelOrder() {
         baseLogin();
         productPage.addAllProducts();

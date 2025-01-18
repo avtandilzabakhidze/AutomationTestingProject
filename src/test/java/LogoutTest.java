@@ -2,7 +2,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class LogoutTest extends BaseTest {
-    @Test
+    @Test(description = "Test logout functionality")
     public void testLogout() {
         baseLogin();
         logoutPage.openBurgerManu();

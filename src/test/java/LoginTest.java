@@ -3,7 +3,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
-    @Test(dataProvider = "loginCredentials")
+    @Test(dataProvider = "loginCredentials", description = "Test login with valid credentials")
     public void testLogin(String username, String password) {
         loginPage.enterUsername(username);
         loginPage.enterPassword(password);
@@ -24,7 +24,7 @@ public class LoginTest extends BaseTest {
         };
     }
 
-    @Test
+    @Test(description = "Test login with empty credentials")
     public void testEmptyCredentials() {
         loginPage.enterUsername("");
         loginPage.enterPassword("");
@@ -33,7 +33,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not displayed \n");
     }
 
-    @Test
+    @Test(description = "Test login with empty password")
     public void testEmptyPassword() {
         loginPage.enterUsername("standard_user");
         loginPage.enterPassword("");
@@ -42,7 +42,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not displayed \n");
     }
 
-    @Test
+    @Test(description = "Test login with empty username")
     public void testEmptyUsername() {
         loginPage.enterUsername("");
         loginPage.enterPassword("secret_sauce");
@@ -51,7 +51,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not displayed \n");
     }
 
-    @Test
+    @Test(description = "Test login with locked out user")
     public void testLockedOutUser() {
         loginPage.enterUsername("locked_out_user");
         loginPage.enterPassword("secret_sauce");
@@ -60,7 +60,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not displayed \n");
     }
 
-    @Test
+    @Test(description = "Test login with wrong username")
     public void testWrongUsername() {
         loginPage.enterUsername("123");
         loginPage.enterPassword("secret_sauce");
@@ -69,7 +69,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(loginPage.checkRequiredParams(), "\n Error message was not displayed \n");
     }
 
-    @Test
+    @Test(description = "Test login with wrong password")
     public void testWrongPassword() {
         loginPage.enterUsername("locked_out_user");
         loginPage.enterPassword("123");
