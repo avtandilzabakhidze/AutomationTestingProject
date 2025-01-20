@@ -1,7 +1,7 @@
 # AutomationTestingProject
 
 ## Overview
-This project is an automated testing suite developed in **Java** using the **Selenium** framework, **TestNG** for test execution, and **Allure** for reporting. The tests validate the functionality of the [SauceDemo](https://www.saucedemo.com/) website, ensuring its critical features work as expected.
+This project is an automated testing suite developed in **Java** using the **Selenium** framework, **TestNG** for test execution and **Allure** for reporting. The tests validate the functionality of the [SauceDemo](https://www.saucedemo.com/) website, ensuring its critical features work as expected.
 
 ## Features Tested
 
@@ -13,7 +13,7 @@ This project is an automated testing suite developed in **Java** using the **Sel
   - Locked-out user scenarios.
 
 ### 2. Product Management
-- Add, remove, and validate products in the cart.
+- Add, remove and validate products in the cart.
 - Sort products by:
   - Name (A-Z and Z-A).
   - Price (Low-High and High-Low).
