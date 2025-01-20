@@ -62,6 +62,7 @@ public class OrderTest extends BaseTest {
         orderPage.clickFinishButton();
         Assert.assertTrue(orderPage.isOrderComplete(), "\n Order was not completed successfully \n");
         orderPage.clickBackToHome();
+        Assert.assertTrue(loginPage.logoIsDisplayed(), "\n The logo is not displayed on the inventory page after login \n");
     }
 
     @Test(description = "Test total price calculation")
