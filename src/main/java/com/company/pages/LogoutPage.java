@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 public class LogoutPage extends BasePage {
     private final By BurgerButton = By.xpath("//div[@class=\"bm-burger-button\"]");
     private final By logoutButton = By.linkText("Logout");
-
     private final By username = By.id("user-name");
     private final By password = By.id("password");
 

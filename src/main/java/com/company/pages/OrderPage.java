@@ -18,7 +18,6 @@ public class OrderPage extends BasePage {
     private final By backHome = By.id("back-to-products");
     private final By cancel= By.id("cancel");
 
-
     public OrderPage(WebDriver driver) {
         super(driver);
     }
